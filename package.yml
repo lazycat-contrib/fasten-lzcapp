@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.fasten
+version: 1.1.3
+name: Fasten
+description: "开源、自托管的个人/家庭电子病历聚合器"
+min_os_version: "1.5.0"
+homepage: https://github.com/fastenhealth/fasten-onprem
+author: fastenhealth
+locales:
+  zh:
+    description: "开源、自托管的个人/家庭电子病历聚合器"
+    name: Fasten
+  en:
+    description: "Open-source, self-hosted personal and family electronic medical record aggregator"
+    name: Fasten

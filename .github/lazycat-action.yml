@@ -1,0 +1,39 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/fasten.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: fasten
+build:
+  run_buildscript: false
+images:
+  - id: fasten
+    target: service
+    service: fasten
+    source: ghcr.io/fastenhealth/fasten-onprem
+    channel: custom
+    sort: semver
+    tag_regex: '^main-v\d+\.\d+\.\d+$'
+    version_regex: '^main-v(?P<version>\d+\.\d+\.\d+)$'
+    version_template: '{version}'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Fasten
+    summary: "开源、自托管的个人/家庭电子病历聚合器"
