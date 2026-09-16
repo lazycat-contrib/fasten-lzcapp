@@ -10,6 +10,6 @@ application:
 services:
   fasten:
     # upstream: ghcr.io/fastenhealth/fasten-onprem:main-v1.1.3
-    image: ghcr.io/fastenhealth/fasten-onprem:main-v1.1.3
+    image: registry.lazycat.cloud/czyt/fastenhealth/fasten-onprem:fc7bde8dfea1f441
     binds:
       - /lzcapp/var/db:/opt/fasten/db
